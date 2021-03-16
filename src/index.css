@@ -1,13 +1,59 @@
+* {
+  margin: 2px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header section */
+
+.Header {
+  margin: 5vh 10vw 0 10vw;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.Title {
+  text-align: center;
+}
+
+.Scores {
+  text-align: center;
+}
+
+.Instructions {
+  text-align: center;
+}
+
+/* Card Table Section */
+
+.CardTable {
+  margin: 1vh 10vw 0 10vw;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: 33% 33% 34%;
+}
+
+.Card {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 3vh 3vh 3vh 3vh;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.Card:hover {
+  background-color: #cfcfcf;
+  font-weight: bold;
 }
