@@ -38,18 +38,19 @@ body {
 /* Card Table Section */
 
 .CardTable {
-  margin: 1vh 10vw 0 10vw;
+  margin: 10vh 10vw 0 10vw;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: 33% 33% 34%;
+  gap: 10px 10px;
+  justify-items: center;
 }
 
 .Card {
-  width: 150px;
+  width: 180px;
   text-align: center;
   border: 1px solid black;
   border-radius: 5px;
-  margin: 3vh 3vh 3vh 3vh;
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
