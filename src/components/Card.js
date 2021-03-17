@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Card(props) {
-  // Report when clicked
-  // Remember if clicked or not
+  const { content } = props;
+  const [ clicked, setClicked ] = useState(props.clicked);
+
+  const handleClick = () => {
+    props.onClick(content);
+    setClicked(true);
+  }
+
   return (
-    <div className="Card">
+    <div 
+      className="Card"
+      onClick={handleClick}
+    >
       {props.content}
     </div>
   );

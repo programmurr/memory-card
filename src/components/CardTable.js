@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './Card';
 
 function CardTable(props) {
-  // Display 12 cards
-  // Randomize order
-  // Report card click
+  const [ clickedArray, setClickedArray ] = useState([]);
+
+  useEffect(() => {
+    // Generate random order of cards
+    // Randomize at every click - maybe add clickedArray as dependency to generate
+    //  new randomization
+  })
+
+  function handleCardClick(content) {
+    const newClickedArray = clickedArray.concat(content);
+    setClickedArray(newClickedArray);
+    props.onCardClick(newClickedArray.length);
+  }
 
   return (
     <div className="CardTable">
-      <Card content="1" />
-      <Card content="2" />
-      <Card content="3" />
-      <Card content="4" />
-      <Card content="5" />
-      <Card content="6" />
-      <Card content="7" />
-      <Card content="8" />
-      <Card content="9" />
-      <Card content="10" />
-      <Card content="11" />
-      <Card content="12" />
+      <Card content="1" clicked={false} onClick={handleCardClick} />
+      <Card content="2" clicked={false} onClick={handleCardClick} />
+      <Card content="3" clicked={false} onClick={handleCardClick} />
+      <Card content="4" clicked={false} onClick={handleCardClick} />
+      <Card content="5" clicked={false} onClick={handleCardClick} />
+      <Card content="6" clicked={false} onClick={handleCardClick} />
+      <Card content="7" clicked={false} onClick={handleCardClick} />
+      <Card content="8" clicked={false} onClick={handleCardClick} />
+      <Card content="9" clicked={false} onClick={handleCardClick} />
+      <Card content="10" clicked={false} onClick={handleCardClick} />
+      <Card content="11" clicked={false} onClick={handleCardClick} />
+      <Card content="12" clicked={false} onClick={handleCardClick} />
     </div>
   );
 }
