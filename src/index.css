@@ -48,11 +48,10 @@ body {
 
 .Card {
   width: 180px;
+  height: 106px;
   text-align: center;
   border: 1px solid black;
   border-radius: 5px;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
 }
 
 .Card:hover {
