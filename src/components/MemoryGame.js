@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Header from './Header';
 import CardTable from './CardTable';
 
-// TODO: 
-// Detect when card has already been clicked
-// Reset current/best scores accordingly
 function MemoryGame() {
   const [ bestScore, setBestScore ] = useState(0);
   const [ currentScore, setCurrentScore ] = useState(0);
@@ -13,10 +10,19 @@ function MemoryGame() {
     setCurrentScore(length);
   }
 
+  function handleReset(length) {
+    if (length >= bestScore) {
+      setBestScore(length);
+      setCurrentScore(0);
+    } else {
+      setCurrentScore(0);
+    }
+  }
+
   return (
     <div className="MemoryGame">
       <Header bestScore={bestScore} currentScore={currentScore} />
-      <CardTable onCardClick={handleCardClick}/>
+      <CardTable onCardClick={handleCardClick} gameReset={handleReset}/>
     </div>
   );
 }

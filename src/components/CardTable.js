@@ -11,9 +11,14 @@ function CardTable(props) {
   })
 
   function handleCardClick(content) {
-    const newClickedArray = clickedArray.concat(content);
-    setClickedArray(newClickedArray);
-    props.onCardClick(newClickedArray.length);
+    if (clickedArray.includes(content)) {
+      props.gameReset(clickedArray.length)
+      setClickedArray([]);
+    } else {
+      const newClickedArray = clickedArray.concat(content);
+      props.onCardClick(newClickedArray.length);
+      setClickedArray(newClickedArray);
+    }
   }
 
   return (
