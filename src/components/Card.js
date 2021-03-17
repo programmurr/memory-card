@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Card(props) {
   const { content } = props;
-  const [ clicked, setClicked ] = useState(props.clicked);
 
-  const handleClick = () => {
+  function handleClick() {
     props.onClick(content);
-    setClicked(true);
   }
 
   return (
@@ -14,7 +12,7 @@ function Card(props) {
       className="Card"
       onClick={handleClick}
     >
-      {props.content}
+      {content}
     </div>
   );
 }
